@@ -1,6 +1,6 @@
 
 .form-main {
-  margin-top: 200px;
+  margin-top: 50px;
 }
 
 .form-item .ant-btn {
@@ -17,7 +17,7 @@
 
 .form-item .ant-input {
   height: 40px !important;
-  width: 396px !important;
+  width: 350px !important;
   font-size: 16px !important;
   border: 1px solid green;
 }

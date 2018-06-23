@@ -24,6 +24,7 @@ class IndexHome extends React.Component {
             flag:"http://www.countryflags.io/"+code+"/shiny/64.png"
           },()=>{
             console.log("Flag link : ",this.state.flag)
+            window.scrollTo(150, 500);
           })
         }
       } else {
@@ -53,10 +54,11 @@ class IndexHome extends React.Component {
               required: true, message: 'Please type the country code' }],
             })(
               <Search className="form-item"
-              placeholder="Type the country code here (Eg. IN for INDIA)"
+              placeholder=" Type the country code here (Eg. IN for INDIA)"
               enterButton="Search flag"
               size="large"
               onSearch={this.getFlag}
+              onChange={this.clearFlag}
               maxLength="2"
             />
           )}
