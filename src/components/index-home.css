@@ -1,6 +1,6 @@
 
 .form-main {
-  margin-top: 300px;
+  margin-top: 200px;
 }
 
 .form-item .ant-btn {
@@ -29,5 +29,10 @@
 
 .form-img {
   margin-top: 20px;
-  width: 150px;
+  width: 100px;
+}
+
+.form-label {
+  font-size: 30px;
+  color: gray;
 }

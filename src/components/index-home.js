@@ -1,7 +1,8 @@
 import React from 'react';
 import { Form, Input, Card } from 'antd';
 import './index-home.css';
-import error404 from './404.png'
+import error404 from './404.png';
+import logo from './logo.gif';
 const FormItem = Form.Item;
 const Search = Input.Search;
 
@@ -15,7 +16,6 @@ class IndexHome extends React.Component {
   }
 
   getFlag = () => {
-   // e.preventDefault();
     this.props.form.validateFields((err, value) => {
       if (!err) {
       let code = value.country;
@@ -26,7 +26,15 @@ class IndexHome extends React.Component {
             console.log("Flag link : ",this.state.flag)
           })
         }
+      } else {
+        this.clearFlag()
       }
+    })
+  }
+
+  clearFlag = () => {
+    this.setState({
+      flag:""
     })
   }
 
@@ -35,6 +43,9 @@ class IndexHome extends React.Component {
     return(
       <div>
         <Form className="form-main">
+        <FormItem className="form-label" label="Search the flag with Country code">
+        <img className="form-img-flag" alt="flag" src={logo}/>
+        </FormItem>
         <FormItem>
           {getFieldDecorator('country', {
             rules: [{
@@ -42,7 +53,7 @@ class IndexHome extends React.Component {
               required: true, message: 'Please type the country code' }],
             })(
               <Search className="form-item"
-              placeholder="Type the country code (Eg. IN for INDIA)"
+              placeholder="Type the country code here (Eg. IN for INDIA)"
               enterButton="Search flag"
               size="large"
               onSearch={this.getFlag}
